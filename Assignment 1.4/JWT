@@ -1,0 +1,20 @@
+The full form of JWT is JSON Web Token.
+It is a standard for maintaining security and safety while transferring data between two parties on the internet - client and server. They contain JSON objects which have the information that needs to be shared. Each JWT is also signed using cryptography (hashing) to ensure that the JSON contents (also known as JWT claims) cannot be altered by the client or a malicious party.
+
+Why is a JSON required in the form of tokens?
+- If the auth server sends it as a plain JSON, the client application’s APIs would have no way to verify that the content they are receiving is correct. So, in order to verify if it's correct or not, a token is used which is a string containing some necessary information required to verify easily. The string consists of a random set of alphanumeric characters pointing to a unique ID in the database, or it could be an encoded JSON that can be self-verified by the client (known as JWTs).
+
+A JWT contains three parts:
+
+Header: Consists of two parts:
+-The signing algorithm
+-The type of token, which is mostly “JWT”.
+Payload: The payload contains the claims or the JSON object.
+Signature: A string that is generated via a cryptographic algorithm that can be used to verify the integrity of the JSON payload.
+
+
+Top 3 benefits of using JWTS are:
+
+i) Security - JWTs are digitally signed using a secret or a public/private key pairs to safeguard from being attacked or breached by an attacker.
+ii) Space saving - JWTs are stored only on the client after being generated on the server which saves database space.
+iii) Efficiency - It doesn't take much time to verify a JWT since whole database need not be looked up. It is extremely useful in time saving while working with large distributed systems.
